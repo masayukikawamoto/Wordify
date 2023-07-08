@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
+const db_url = import.meta.env.VITE_DB_URL
+const port = import.meta.env.VITE_PORT
 
 const corsOptions = {
   origin: "https://wordify-app.onrender.com",
@@ -11,8 +13,8 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 
-mongoose.connect(import.meta.env.VITE_DB_URL).then(() => {
-  const PORT = import.meta.env.VITE_PORT || 8000;
+mongoose.connect(db_url).then(() => {
+  const PORT = port || 8000;
   app
     .listen(PORT, () => {
       console.log(`App is Listening on PORT ${PORT}`);

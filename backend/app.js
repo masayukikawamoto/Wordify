@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://wordify-app.onrender.com",
 };
 
 app.use(express.json());

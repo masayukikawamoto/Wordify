@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-const db_url = import.meta.env.VITE_DB_URL
-const port = import.meta.env.VITE_PORT
+const db_url = import.meta.env.VITE_DB_URL;
+const port = import.meta.env.VITE_PORT;
 
 const corsOptions = {
   origin: "https://wordify-app.onrender.com",
